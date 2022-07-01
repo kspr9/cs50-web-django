@@ -24,4 +24,7 @@ urlpatterns = [
 
     # to add all hello related urls to this main urls file
     path('hello/', include("hello.urls")),
+
+    # to add all hello related urls to this main urls file
+    path('newyear/', include("newyear.urls")),
 ]

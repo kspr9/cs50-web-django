@@ -22,9 +22,12 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # to add all hello related urls to this main urls file
+    # to add all 'hello' related urls to this main urls file
     path('hello/', include("hello.urls")),
 
-    # to add all hello related urls to this main urls file
+    # to add all 'newyear' related urls to this main urls file
     path('newyear/', include("newyear.urls")),
+
+    # to add all 'tasks' related urls to this main urls file
+    path('tasks/', include("tasks.urls")),
 ]

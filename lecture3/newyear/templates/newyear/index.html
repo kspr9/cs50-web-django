@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>is it New Years?</title>
+  </head>
+  <body>
+    {% if newyear %}
+    <!-- if newyear variable in newyear/views.py index function returns True -->
+    <h1>Yes, it's New Year!! Lot's of luck will be upon you this year!</h1>
+    <!-- if newyear variable in newyear/views.py index function returns False -->
+    {% else %}
+    <h1>NO, it's not New Year</h1>
+    {% endif %}
+  </body>
+</html>

@@ -30,7 +30,9 @@ def add_task(request):
             # 'task' refers to NewTaskForms variable 'task'
             task = form.cleaned_data["task"]
             # here appended task refers to the task variable defined one row up
-            tasks.append(task)
+            # tasks.append(task) # instead of appending tasks we need to change this
+            # this is coming from index function return context
+            request.session["tasks"] += [task]
             # if a task is added, redirect to list of tasks ie index page
             return HttpResponseRedirect(reverse("tasks:index"))
         else:

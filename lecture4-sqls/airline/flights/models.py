@@ -4,6 +4,8 @@ from django.db import models
 
 
 class Airport(models.Model):
+    # PrimaryKey ie pk is generated automatically
+
     code = models.CharField(max_length=3)
     city = models.CharField(max_length=64)
 
@@ -12,6 +14,7 @@ class Airport(models.Model):
 
 
 class Flight(models.Model):  # class represents basically the table of a database
+    # PrimaryKey ie pk is generated automatically
 
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
@@ -21,6 +24,8 @@ class Flight(models.Model):  # class represents basically the table of a databas
         return f"{self.id}: {self.origin} to {self.destination}"
 
 class Passenger(models.Model):
+    # PrimaryKey ie pk is generated automatically
+    
     first = models.CharField(max_length=64)
     last = models.CharField(max_length=64)
     flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
